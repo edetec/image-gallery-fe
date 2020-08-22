@@ -7,7 +7,7 @@
             <v-col v-for="image in images" :key="image.id" cols="2">
               <v-card>
                 <v-img
-                  :src="`/${image.thumbnail_path}`"
+                  :src="getImageUrl(image.thumbnail_path)"
                   aspect-ratio="1"
                   class="grey lighten-2"
                 >
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { getAllImages } from "../services/image";
+import { getAllImages, getImageUrl } from "../services/image";
 
 export default {
   data() {
@@ -37,6 +37,7 @@ export default {
     };
   },
   methods: {
+    getImageUrl,
     fetchImages() {
       getAllImages()
         .then(({ data }) => {
