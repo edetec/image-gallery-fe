@@ -31,13 +31,14 @@
     </v-app-bar>
 
     <v-main>
-      <ImageGallery/>
+      <image-gallery />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import ImageGallery from './components/ImageGallery';
+import 'vuejs-noty/dist/vuejs-noty.css';
 
 export default {
   name: 'App',
